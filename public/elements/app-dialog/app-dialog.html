@@ -1,0 +1,25 @@
+<link rel="import" href="../../components/ui-window/polymer-window.html">
+<dom-module id="app-dialog">
+    <template>
+        <ui-window id="window1" button-class="secondary" button-label="Sign In" title="Sign In" modal="true">
+            <flex-box class="column sign-in-window">
+                <div>
+                    <h3>Sign In</h3>
+                    <input type="text" id="username" placeholder="username">
+                    <input type="password" id="password" placeholder="password">
+                </div>
+                <h4 class="margin-top two hint font-light">Sign-In with</h4>
+                <flex-box class="icons">
+                    <span class="icon-social-facebook-circle size-64 facebook pointer"></span>
+                    <span class="icon-social-twitter-circle size-64 twitter pointer"></span>
+                </flex-box>
+            </flex-box>
+        </ui-window>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is:'app-dialog'
+    });
+</script>

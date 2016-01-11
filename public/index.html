@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Prototype</title>
+    <script src="components/elliptical-component/dist/webcomponents.js"></script>
+    <script src="components/elliptical-holderjs/holder.js"></script>
+    <link rel="import" href="elements/app-footer/app-footer.html" id="footer-doc">
+    <link rel="import" href="vulcanized/import.html">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<ui-container>
+    <app-header class="index"></app-header>
+    <section class="index">
+        <ui-carousel animation="fade" indicators="true">
+            <carousel-item><img src="holder.js/2100x750?bg=c74e39&text=Home"></carousel-item>
+            <carousel-item><img src="holder.js/2100x750?bg=f6c22d&text=Slide"></carousel-item>
+            <carousel-item><img src="holder.js/2100x750?bg=52b388&text=Slide"></carousel-item>
+        </ui-carousel>
+        <grid-row>
+            <grid-columns class="default-12">
+                <flex-box class="center full-width margin-top two">
+                    <h3>Sign Up for the App Platform</h3>
+                </flex-box>
+
+                <flex-box class="space-around align-center promo-box margin-top two">
+                    <ui-box width-30 height-500 responsive>
+                        <flex-box class="column center full-width">
+                            <h4>Free Platform</h4>
+                            <ul class="margin-top">
+                                <li>Nunc vehicula euismod lacus eu imperdiet</li>
+                                <li>Phasellus varius lorem sed sem finibus</li>
+                                <li>Sed aliquam leo ac massa maximus</li>
+                            </ul>
+                        </flex-box>
+                        <a class="ui-button large inverse bottom">GET FREE</a>
+                    </ui-box>
+                    <div class="box-divider"></div>
+                    <ui-box width-30 height-500 responsive class="secondary">
+                        <flex-box class="column center full-width">
+                            <h4>Go Premium</h4>
+                            <ul class="margin-top">
+                                <li>Nunc vehicula euismod imperdiet</li>
+                                <li>Phasellus varius lorem sed finibus</li>
+                                <li>Sed aliquam leo ac massa maximus</li>
+                                <li>Sed tempor est lacus, consequat </li>
+                                <li>Lorem ipsum dolor sit consectetur</li>
+                            </ul>
+                        </flex-box>
+                        <a class="ui-button large secondary bottom">GET PREMIUM</a>
+                    </ui-box>
+                </flex-box>
+            </grid-columns>
+        </grid-row>
+    </section>
+    <footer data-role="footer"></footer>
+    <app-dialog></app-dialog>
+</ui-container>
+<script src="scripts/app.js"></script>
+</body>

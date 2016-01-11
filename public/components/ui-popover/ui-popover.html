@@ -1,0 +1,26 @@
+<link rel="import" href="../ui-behaviors/popover.html">
+
+
+<script>
+Elliptical(function(){
+    $.element.registerElement('pop-content');
+
+    $.element('ui-popover',[Elliptical.Behaviors.PopOver],{
+        options: {
+            proxyUpgrade:true,
+            dataWidth:null,
+            dataTop:null
+
+        },
+
+        _initElement: function(){
+            var content = this.element.find('pop-content');
+            this._data.set('content',content);
+            if(this.dataWidth) this._assignWidth(this.dataWidth);
+            if(this.dataTop) this._assignTop(this.dataTop);
+            this.__events();
+        }
+
+    });
+});
+</script>

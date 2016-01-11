@@ -1,0 +1,214 @@
+///site sass project main start file
+
+
+///imports--------------------------------------------
+@import "fonts";
+@import "mixins";
+@import "theme";
+
+
+@include component-theme($touch:$theme);
+@include elliptical-project();
+
+/// fonts ---------------------------------------------
+@include site-fonts();
+
+///variables & colors ---------------------------------
+@import "variables";
+
+
+///sass components --------------------------------------
+@import "sass-components";
+
+
+///typography-----------------------------------------------
+body{
+  font-family:map-get($Font,regular);//
+}
+
+///grid -----------------------------------------------------
+
+
+
+///icons------------------------------------------------------
+@include social-icons();
+
+
+///forms------------------------------------------------------
+
+
+///web components---------------------------------------------
+@import "web-components";
+@import "md";
+
+
+///custom pages & sections----------------------------------------
+section{
+  &.outer{
+    padding-top:6em;
+    min-height:500px;
+  }
+  &.index{
+    padding-top:80px;
+    min-height:500px;
+  }
+}
+
+.sign-in-window{
+  h4{
+    margin-bottom:1em;
+  }
+  input{
+    max-width:80%;
+    margin-bottom:1em;
+  }
+  @include justify-content(space-between);
+  &>.icons{
+    &>span{
+      &:first-of-type{
+        margin-right:.5em;
+      }
+    }
+  }
+}
+
+.promo-box{
+  min-height:300px;
+ }
+
+.box-divider{
+  width:1px;
+  background:$gray-light;
+  height:400px;
+}
+
+.facebook{
+  color:map-get($Color,facebook);
+}
+
+.twitter{
+  color:map-get($Color,twitter);
+}
+
+.hint{
+  color:map-get($Color,hint);
+}
+
+.font-bold{
+  font-family:map-get($Font,medium);
+}
+
+.font-light{
+  font-family:map-get($Font,light);
+}
+
+.search-bg{
+  color:$white;
+  background:map-get($Color,accent);
+
+}
+
+.accent{
+  color:map-get($Color,accent);
+}
+
+.secondary-accent{
+  color:map-get($Color,secondary-accent);
+}
+
+.primary-accent{
+  color:map-get($Color,primary-accent);
+}
+
+.content-container{
+  width:100%;
+  height:300px;
+  &.accent{
+    @extend .search-bg;
+  }
+  .flex-content{
+    height:300px;
+  }
+}
+
+///footer----------------------------------------------------------
+@include ui-sticky-footer();
+
+footer[data-role=footer]{
+  font-family:map-get($Font,medium);
+  min-height:360px;
+  margin-top:8em;
+  padding-top:3em;
+  font-size:14px;
+  background:map-get($Color,footer-bg);
+  color:map-get($Color,footer-link);
+
+  .footer-box{
+    min-height:300px;
+    &.icons{
+      @include align-items(flex-end);
+    }
+  }
+
+  a{
+    color:map-get($Color,footer-link);
+    &:hover{
+      color:map-get($Color,footer-link-hover);
+    }
+  }
+
+  .links{
+    &>div{
+      &:nth-of-type(odd){
+        width:30%;
+      }
+      &:nth-of-type(even){
+        width:70%;
+      }
+      margin-bottom:.5em;
+    }
+  }
+
+  .legal{
+    font-size:12px;
+    a{
+      font-size:12px;
+      font-family:map-get($Font,regular);
+      margin-right:1em;
+    }
+  }
+  &.darken{
+    background:map-nested-get($Color,darken,footer-bg);
+    color:map-nested-get($Color,darken,footer-link);
+    a{
+      color:map-nested-get($Color,darken,footer-link);
+      &:hover{
+        color:map-nested-get($Color,darken,footer-link-hover);
+      }
+    }
+  }
+}
+
+
+
+
+///media queries---------------------------------------------------
+@import "media-queries";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

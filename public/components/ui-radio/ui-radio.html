@@ -1,0 +1,29 @@
+<link rel="import" href="../ui-behaviors/checkbox.html">
+
+<ui-radio parse-attr definition>
+    <template>
+        <input type="radio" id="[[data-id]]" name="[[name]]" data-bind="[[bind]]" [[required]] value="[[value]]">
+        <label for="[[data-id]]">[[label]]</label>
+    </template>
+</ui-radio>
+
+<script>
+Elliptical(function(){
+    $.element('ui-radio',[Elliptical.Behaviors.Checkbox],{
+        options: {
+            eventType:'ui.radio.change'
+        },
+
+        _initElement: function(){
+            var checked=this.element.attr('checked');
+            if(checked){
+                var input=this.element.find('input');
+                input.prop('checked',true);
+            }
+            this.__events();
+        }
+
+
+    });
+});
+</script>

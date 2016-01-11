@@ -1,0 +1,31 @@
+<link rel="import" href="../ui-behaviors/notification.html">
+
+<style>
+    ui-notify{
+        display:none;
+    }
+</style>
+<script>
+Elliptical(function(){
+    $.element('ui-notify',[Elliptical.Behaviors.Notification],{
+        options: {
+            proxyUpgrade:true,
+            cssClass:'info',
+            message:'Processing...',
+            terminate:false,
+            terminateTimeout: 3000,
+            terminateDelay:1000,
+            animationDuration:1200,
+            top:null
+        },
+
+        _initElement: function(){
+            this._data.set('cssClass',this.cssClass);
+            this._data.set('element',null);
+            this._data.set('isVisible',false);
+            this._initNotification();
+        }
+
+    });
+});
+</script>

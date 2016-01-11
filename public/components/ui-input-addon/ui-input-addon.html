@@ -1,0 +1,33 @@
+
+
+<ui-input-addon parse-attr definition>
+    <template>
+        <input type="text" placeholder="[[placeholder]]" name="[[name]]" id="[[data-id]]" data-bind="[[bind]]">
+        <ui-button class="ui-button [[button-class]]"><span class="[[icon-class]]">[[button-value]]</span></ui-button>
+    </template>
+</ui-input-addon>
+<script>
+Elliptical(function(){
+    $.element('ui-input-addon',{
+        options: {
+
+        },
+
+        _initElement: function(){
+            this._setValueProp();
+        },
+
+        _setValueProp:function(){
+            var element=this.element;
+            var node=this.element[0];
+            Object.defineProperty(node, 'value', {
+                get: function() { return element.find('input').val(); },
+                set: function(newValue) { element.find('input').val(newValue); },
+                enumerable: true,
+                configurable: true
+            });
+        }
+
+    });
+});
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Prototype</title>
+    <script src="components/elliptical-component/dist/webcomponents.js"></script>
+    <script src="components/elliptical-holderjs/holder.js"></script>
+    <link rel="import" href="elements/app-footer/app-footer.html" id="footer-doc">
+    <link rel="import" href="vulcanized/import.html">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<ui-container>
+   <app-header></app-header>
+    <section class="index">
+        <div class="content-container accent">
+            <grid-row>
+                <grid-columns class="default-12">
+                    <flex-box class="column align-center center flex-content">
+                        <h3>Search Support</h3>
+                        <ui-input-icon placeholder="search support" icon="&#xe016"></ui-input-icon>
+                    </flex-box>
+                </grid-columns>
+            </grid-row>
+        </div>
+
+        <grid-row>
+            <grid-columns class="default-12 height-400">
+                <flex-box class="center margin-top two margin-bottom two">
+                    <h5>I need help with</h5>
+                </flex-box>
+                <flex-box class="child-width-25 responsive-flex touch-child-width-33 phone-child-width-50 child-column child-align-center child-height-100 touch-child-margin">
+                    <flex-box>
+                        <span class="icon-business accent size-72"></span>
+                        <span class="flex-bottom">Marketing Plans</span>
+                    </flex-box>
+                    <flex-box>
+                        <span class="icon-cloud secondary-accent size-72"></span>
+                        <span class="flex-bottom">Services</span>
+                    </flex-box>
+                    <flex-box>
+                        <span class="icon-phone-android size-72"></span>
+                        <span class="flex-bottom">Devices</span>
+                    </flex-box>
+                    <flex-box>
+                        <span class="icon-apps primary size-72"></span>
+                        <span class="flex-bottom">Apps</span>
+                    </flex-box>
+                </flex-box>
+                <flex-box class="center margin-top three">
+                    <a class="font-bold">View additional help topics</a>
+                </flex-box>
+            </grid-columns>
+        </grid-row>
+    </section>
+    <footer data-role="footer"></footer>
+</ui-container>
+<app-dialog></app-dialog>
+<script src="scripts/app.js"></script>
+</body>

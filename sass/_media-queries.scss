@@ -1,0 +1,98 @@
+///site/project media queries
+
+
+@import "variables";
+@import "mixins";
+
+///media queries---------------------------------------------------
+
+
+///desktop
+@include desktop-content() {
+
+}
+
+///touch
+
+@include touch-content() {
+  .promo-box{
+    ui-box{
+      width:45%;
+      min-height:600px;
+    }
+  }
+  section{
+    &.outer{
+      padding-top:4em;
+    }
+    &.index{
+      padding-top:50px;
+    }
+  }
+
+  ui-carousel{
+    min-height:0;
+  }
+
+}
+
+
+///tablet
+@include tablet-content() {
+
+
+}
+
+///phone
+@include phone-content() {
+  .promo-box{
+    @include flex-wrap(wrap);
+    ui-box{
+      .ui-button{
+        width:auto;
+        margin-top:2em;
+      }
+    }
+    .box-divider{
+      width:120%;
+      height:1px;
+      margin:2em -2em;
+    }
+    ul{
+      width:80%;
+    }
+  }
+
+  footer[data-role=footer]{
+    .footer-box{
+      min-height:0;
+      @include justify-content(center);
+      &.icons{
+        @include align-items(center);
+      }
+      .links{
+        &>div{
+          width:50% !important;
+          padding:0 20px;
+          text-align:center;
+        }
+      }
+      .legal{
+        margin:2em 0;
+        @include justify-content(center);
+      }
+    }
+  }
+
+}
+
+
+///grid contain(screen width=grid width)
+@include grid-content() {
+
+}
+
+///custom breakpoints
+
+
+

@@ -1,0 +1,23 @@
+<link rel="import" href="../ui-behaviors/collapse.html">
+
+
+<script>
+Elliptical(function(){
+    $.element('ui-collapse',[Elliptical.Behaviors.Collapse],{
+        options: {
+            proxyUpgrade:true,
+            animate: true,
+            duration: 300,
+            easing: 'linear'
+        },
+
+        _initElement: function(){
+            this._data.set('collapsible',null);
+            this._setCollapseItems();
+            this._collapseEvents();
+            this.__events();
+        }
+
+    });
+});
+</script>

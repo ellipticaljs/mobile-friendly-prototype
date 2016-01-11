@@ -1,0 +1,30 @@
+///variables & colors ---------------------------------
+$Font: (
+   regular:'ubunturegular',
+   medium:'ubuntumedium',
+   light:'ubuntulight'
+);
+
+$Color:(
+   brand:#2fbd51,
+   brand-hover:#1ed760,
+   menu-link:#2e2f33,
+   hint:darken($gray-light,10%),
+   footer-bg:#262626,
+   footer-icon:lighten(#262626,10%),
+   footer-link:#919496,
+   footer-link-hover:#fff,
+   facebook:#3b5998,
+   twitter:#5ec5fb,
+   primary-accent:#5f3a5f,
+   secondary:#2fbd51,
+   secondary-accent:#20dc6b,
+   accent:#c74e39,
+   darken:(
+      footer-bg:#121212,
+      footer-icon:#232323,
+      footer-link:#535556,
+      footer-link-hover:darken(#fff,10%)//
+   )
+);
+
