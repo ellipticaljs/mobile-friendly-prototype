@@ -32,5 +32,5 @@ http://localhost:9040/
 
 ##Demo
 
-
+http://ellipticaljs.github.io/mobile-friendly-prototype/
 
