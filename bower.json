@@ -1,0 +1,27 @@
+{
+  "name": "mobile-friendly-prototype",
+  "description": "mobile-friendly starter prototype",
+  "main": "public/index.html",
+  "authors": [
+    "Scott <dev@misonline.biz>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "prototype"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "elliptical-holderjs": "~2.9.2",
+    "ui-components": "~1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.7",
+    "elliptical-browser": "~1.0.20"
+  }
+}

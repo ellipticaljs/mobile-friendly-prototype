@@ -1,0 +1,40 @@
+<link rel="import" href="../ui-behaviors/tabs.html">
+
+<script>
+Elliptical(function(){
+    $.element.registerElement('tab-items');
+    $.element.registerElement('tab-item');
+    $.element.registerElement('content-items');
+    $.element.registerElement('tab-content');
+
+    $.component('ui-tabs',[Elliptical.Behaviors.Tabs],{
+        options: {
+            proxyUpgrade:true,
+            border: false,
+            borderTop: false,
+            borderLeft: false,
+            minHeight: null,
+            animateSections: false,
+            duration: 500,
+            flex: false,
+            preventDefault: false,
+            autoHide: true,
+            stopPropagation: true,
+            scopeBind:false
+        },
+
+        _initComponent: function(){
+            this._setData();
+            this._getTabs();
+            this._initActiveTab();
+            this._getContentSections();
+            this._minHeight();
+            this._setStyles();
+            this._removeStackedTabs();
+            this.__events();
+        }
+
+
+    });
+});
+</script>

@@ -1,0 +1,66 @@
+<link rel="import" href="../ui-behaviors/drawer.html">
+<link rel="import" href="../ui-behaviors/navigation.html">
+<link rel="import" href="../ui-behaviors/navbar.html">
+
+<script>
+Elliptical(function(){
+    $.element('ui-topbar',[Elliptical.Behaviors.Drawer,Elliptical.Behaviors.Navigation,Elliptical.Behaviors.Navbar],{
+        options: {
+            proxyUpgrade: true,
+            transformDuration: 250,
+            transformDelay: 0,
+            translateX: '260px',
+            overlayOpacity: .5,
+            overlayOpenDuration: 0,
+            overlayCloseDuration: 150,
+            overlayBackground: '#000',
+            includeHome: true,
+            homeUrl: '/',
+            homeIcon:null,
+            model: [],
+            events:false,
+            touchEvents:true,
+            easing:'ease-in-out'
+        },
+
+        _initElement: function(){
+            if (this._mq.touch) {
+                this._createTouchNavigation(this.element, this.dataClass);
+                this._touchMenuEvents();
+            } else {
+                //bind desktop menu events
+                this._menuEvents();
+            }
+            //search handler
+            var search = this.element.find('ui-search');
+            if(search[0]){
+                //save ref
+                //this._data.input=search_.find('input');
+                var input=search.find('input');
+                this._data.set('input',input);
+                //desktop search handler
+                this._onSearch(input,'desktop');
+            }
+            //if not touch device, call desktop events
+            if(!this._device.touch) this._desktopEvents();
+            var toggle = this.element.find('ui-toggle');
+            this._data.set('toggle', toggle);
+            var orientationEvent = this._device.orientationEvent;
+            this._event($(window),orientationEvent,this._onOrientationChange.bind(this));
+        },
+
+        _events:{
+            'ui-toggle@click':'_onToggleClick',
+            'window@navScrollTop':'_onNavScrollTop'
+        },
+
+        _onToggleClick:function(event){
+            this._scrollTop(0, 'navScrollTop');
+        },
+
+        _onNavScrollTop:function(event){
+            this._onScrollTop();
+        }
+    });
+});
+</script>

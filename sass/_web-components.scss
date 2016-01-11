@@ -1,0 +1,118 @@
+@import "variables";
+
+@include component-preload();
+@include touch-toggle-menu();
+@include mixins-template();
+
+$_height:80px;
+$_bg:map-get($Color,footer-bg);
+$_item-color:lighten(map-get($Color,footer-bg),30%);
+$_item-color-hover:map-get($Color,footer-link);
+$_header-color:lighten(map-get($Color,footer-icon),10%);
+$_divider-color:map-get($Color,footer-icon);
+$_social-icon-color:map-get($Color,footer-icon);
+
+
+///topbar
+@include ui-topbar($component:ci-bar,$map:(height:$_height)){
+  @include ui-menu();
+  @include ui-dropdown();
+  h3,h5{
+    color:map-get($Color,brand);
+  }
+  a{
+     color:map-get($Color,menu-link);
+    &:hover{
+      color:map-get($Color,brand);
+    }
+    &.brand{
+      color:map-get($Color,brand);
+      &:hover{
+        color:map-get($Color,brand-hover);
+      }
+    }
+  }
+  ui-menu>menu-item>a{
+    text-transform: uppercase;
+    &:hover{
+      text-transform: uppercase;
+    }
+    &>span{
+      margin-right:.2em;
+    }
+  }
+}
+
+///drawer-panel
+@include ui-drawer-panel($map:(height:$_height));
+@include ui-sidebar($map:(
+        background:$_bg,
+        header:(height:50px,color:$_header-color),
+        divider:(color:$_divider-color),
+        item:(color:$_item-color,color-hover:$_item-color-hover),
+        dropdown:(item-color:$_item-color)
+)){
+  @include ui-menu();
+
+};
+
+///header-container
+app-header{
+  display:block;
+}
+
+///search
+@include ui-search();
+
+
+///carousel
+@include ui-carousel(){
+  min-height:670px;
+};
+
+///window
+@include ui-window();
+
+///modal
+@include ui-modal();
+
+///social
+@include ui-social($map:(color:$_social-icon-color));
+
+.darken{
+  ui-social{
+    span{
+      color:map-nested-get($Color,darken,footer-icon);
+    }
+  }
+}
+
+///box
+@include ui-box(){
+  .ui-button{
+    width:80%;
+    border-radius:20px;
+  }
+  ul{
+    font-family:map-get($Font,light);
+    &>li{
+      margin:2em 0;
+      width:100%;
+    }
+  }
+};
+
+///input-icon
+@include ui-input-icon($component:ci-input,$map:(font-size:32px,icon:(top:24px))){
+  width:700px;
+  max-width:90%;
+  input[type=text]{
+    border:0;
+    padding:.75em 1em;
+    &:focus{
+      border:0;
+    }
+  }
+};
+
+

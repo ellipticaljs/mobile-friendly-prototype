@@ -1,0 +1,31 @@
+<link rel="import" href="../ui-behaviors/tooltip.html">
+
+<style>
+    ui-tooltip{
+        display:none;
+    }
+</style>
+<script>
+Elliptical(function(){
+    $.element('ui-tooltip',[Elliptical.Behaviors.Tooltip],{
+        options: {
+            proxyUpgrade:true,
+            placement:'top',
+            tipHeight:8,
+            tipWidth:10,
+            animationIn:'none',
+            animationOut:'none',
+            duration:250,
+            autoRemove:true
+
+        },
+
+        _initElement: function(){
+            this.__events();
+            if(this.autoRemove) this._removeToolTipListener();
+        }
+
+
+    });
+});
+</script>

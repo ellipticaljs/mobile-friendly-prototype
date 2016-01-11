@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Prototype</title>
+    <script src="components/elliptical-component/dist/webcomponents.js"></script>
+    <script src="components/elliptical-holderjs/holder.js"></script>
+    <link rel="import" href="elements/app-footer/app-footer.html" id="footer-doc">
+    <link rel="import" href="vulcanized/import.html">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<ui-container>
+    <app-header></app-header>
+    <section class="outer">
+        <grid-row>
+            <grid-columns class="default-12">
+                <h2>About</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elit lectus, mollis sodales diam at, mattis luctus erat.
+                    In hac habitasse platea dictumst. Proin quis auctor arcu. Nunc rhoncus lacus vel massa malesuada pulvinar.
+                    Curabitur volutpat sem enim, sit amet accumsan arcu eleifend ornare. Cras condimentum ultrices orci, eu porta est finibus ut.
+                    Etiam id odio quis quam convallis rhoncus eu a ligula. Duis pretium odio ut volutpat vulputate.
+                    Nullam nulla metus, suscipit et felis et, hendrerit rhoncus tellus.
+                </p>
+                <p>
+                    Nullam eget mattis ex. Mauris eget enim sit amet justo congue euismod. Nunc a turpis vitae tellus posuere euismod sit amet non eros.
+                    Donec ac ex accumsan, vestibulum magna vel, euismod metus. Nulla facilisi. Sed sed volutpat justo.
+                    In interdum, purus ut volutpat imperdiet, arcu arcu placerat leo, vel cursus nulla tellus et velit.
+                    Phasellus ut quam non nisl feugiat pharetra.
+                    Phasellus arcu risus, tincidunt nec eros ut, viverra mollis tellus.
+                    Mauris in justo eget leo suscipit malesuada porta vel ex.
+                </p>
+            </grid-columns>
+        </grid-row>
+    </section>
+    <footer data-role="footer"></footer>
+    <app-dialog></app-dialog>
+</ui-container>
+<script src="scripts/app.js"></script>
+</body>
