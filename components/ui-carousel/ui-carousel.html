@@ -1,0 +1,72 @@
+<link rel="import" href="../ui-behaviors/carousel.html">
+
+<ui-carousel parse-attr definition>
+    <template>
+        <carousel-navigation class="prev"></carousel-navigation>
+        <carousel-navigation class="next"></carousel-navigation>
+        <carousel-navigation class="indicators"></carousel-navigation>
+        <carousel-inner-container>
+            <carousel-items animation="[[animation]]">
+                <content></content>
+            </carousel-items>
+        </carousel-inner-container>
+    </template>
+</ui-carousel>
+<script>
+Elliptical(function(){
+
+    var _prevNavSelector = 'carousel-navigation.prev';
+    var _nextNavSelector = 'carousel-navigation.next';
+
+    $.element.registerElement('carousel-inner-container');
+    $.element.registerElement('carousel-navigation');
+    $.element.registerElement('carousel-item');
+
+
+    $.component('ui-carousel',[Elliptical.Behaviors.Carousel],{
+        options: {
+            prevNavSelector: _prevNavSelector, //prev nav selector {string}
+            nextNavSelector: _nextNavSelector, //next nav selector {string}
+            animation: 'slide',
+            initOnload:true,
+            auto: false, //auto {bool}
+            autoInterval: null, //auto interval {int}
+            desktopFadeDuration: 1000, //fade duration on desktop {int}
+            desktopDuration: 350, //slide animation duration {int}
+            touchFadeDuration: 0, //fade duration on touch devices {int}
+            touchDuration: 300, //slide duration on touch {int}
+            duration: 300, //duration {int}
+            easing: 'ease', //easing {string}
+            initInterval: 4000,
+            hardwareAcceleration: false,
+            slideDistance: null,
+            preload: true,
+            templateSelector: '[template]',
+            indicators: false,
+            showOnLoad: 0,
+            maxIntervals:null,
+            crossFade:true,
+            scopeBind:false,
+            renderDelay:500,
+            initOnVisibility:true
+        },
+
+        /**
+         * override onInit
+         * @private
+         */
+        __onInit: function () {
+            this._assignLocalData();
+            if(this.initOnload){
+                //run init only if carousel is visible
+                if(this._passVisibilityCheck()) this._initCarousel();
+                else this._initVisibilityListener(); //otherwise run the visibility listener
+            }
+        }
+
+
+
+
+    });
+});
+</script>

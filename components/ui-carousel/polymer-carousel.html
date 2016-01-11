@@ -1,0 +1,130 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../elliptical-polymer-behaviors/observable-behavior.html">
+<link rel="import" href="../ui-behaviors/carousel.html">
+
+<dom-module id="ui-carousel">
+    <template>
+        <carousel-navigation class="prev"></carousel-navigation>
+        <carousel-navigation class="next"></carousel-navigation>
+        <carousel-navigation class="indicators"></carousel-navigation>
+        <carousel-inner-container>
+            <carousel-items animation="[[animation]]">
+                <content></content>
+            </carousel-items>
+        </carousel-inner-container>
+    </template>
+</dom-module>
+
+<script>
+
+    Elliptical.registerElement('carousel-inner-container');
+    Elliptical.registerElement('carousel-navigation');
+    Elliptical.registerElement('carousel-item');
+
+    Polymer({
+
+        is: 'ui-carousel',
+
+        behaviors:[Elliptical.ObservableBehavior,Elliptical.Behaviors.Carousel],
+
+        properties: {
+            prevNavSelector: {
+                type:String,
+                value:'carousel-navigation.prev'
+            },
+            nextNavSelector: {
+                type:String,
+                value:'carousel-navigation.next'
+            },
+            animation: {
+                type:String,
+                value:'slide'
+            },
+            initOnload:{
+                type:Boolean,
+                value:true
+            },
+            auto: {
+                type:Boolean,
+                value:false
+            },
+            autoInterval: {
+                value:null
+            },
+            desktopFadeDuration: {
+                value:1000
+            },
+            desktopDuration: {
+                value:350
+            },
+            touchFadeDuration: {
+                value:0
+            },
+            touchDuration: {
+                value:300
+            },
+            duration: {
+                value:300
+            },
+            easing: {
+                type:String,
+                value:'ease'
+            },
+            initInterval: {
+                value:4000
+            },
+            hardwareAcceleration: {
+                type:Boolean,
+                value:false
+            },
+            slideDistance: {
+                value:null
+            },
+            preload: {
+                type:Boolean,
+                value:true
+            },
+            templateSelector: {
+                type:String,
+                value:'[template]'
+            },
+            indicators: {
+                type:Boolean,
+                value:false
+            },
+            showOnLoad: {
+                value:0
+            },
+            maxIntervals:{
+                value:null
+            },
+            crossFade:{
+                type:Boolean,
+                value:true
+            },
+            scopeBind:{
+                type:Boolean,
+                value:false
+            },
+            renderDelay:{
+                value:500
+            },
+            initOnVisibility:{
+                type:Boolean,
+                value:true
+            }
+
+        },
+
+        ready:function(){
+            this._assignLocalData();
+            if(this.initOnload){
+                //run init only if carousel is visible
+                if(this._passVisibilityCheck()) this._initCarousel();
+                else this._initVisibilityListener(); //otherwise run the visibility listener
+            }
+        }
+
+    });
+
+</script>

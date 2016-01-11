@@ -1,0 +1,34 @@
+
+
+<ui-input-icon parse-attr definition>
+    <template>
+        <input type="text" placeholder="[[placeholder]]" name="[[name]]" id="[[data-id]]" data-bind="[[bind]]">
+    </template>
+</ui-input-icon>
+<script>
+Elliptical(function(){
+    $.element('ui-input-icon',{
+
+        _initElement: function(){
+            var element=this.element;
+            var font=element.attr('font');
+            if(!font){
+                element.attr('font','elliptical');
+            }
+            this._setValueProp();
+        },
+
+        _setValueProp:function(){
+           var element=this.element;
+           var node=this.element[0];
+            Object.defineProperty(node, 'value', {
+                get: function() { return element.find('input').val(); },
+                set: function(newValue) { element.find('input').val(newValue); },
+                enumerable: true,
+                configurable: true
+            });
+        }
+
+    });
+});
+</script>

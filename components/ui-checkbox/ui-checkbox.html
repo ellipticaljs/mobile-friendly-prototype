@@ -1,0 +1,27 @@
+<link rel="import" href="../ui-behaviors/checkbox.html">
+
+<ui-checkbox parse-attr definition>
+    <template>
+        <input type="checkbox" id="[[data-id]]" name="[[name]]" data-bind="[[bind]]" [[required]]>
+        <label for="[[data-id]]">[[label]]</label>
+    </template>
+</ui-checkbox>
+<script>
+Elliptical(function(){
+    $.element('ui-checkbox',[Elliptical.Behaviors.Checkbox],{
+        options: {
+            eventType:'ui.checkbox.change'
+        },
+
+        _initElement: function(){
+            var checked=this.element.attr('checked');
+            if(checked){
+                var input=this.element.find('input');
+                input.prop('checked',true);
+            }
+            this.__events();
+        }
+
+    });
+});
+</script>
