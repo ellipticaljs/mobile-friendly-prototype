@@ -19,7 +19,7 @@
             _initElement: function(){
                 this._createDrawer();
                 this._event(this.element,this._data.click,'ui-toggle',this._onToggleClick.bind(this));
-                this._event(this.element,this._data.click,'[brand]',this._onBrandClick.bind(this));
+                this._event(this.element,this._data.click,'[home]',this._onBrandClick.bind(this));
                 this._event($(document),this._data.click,'ui-sidebar [close]',this._hide.bind(this));
                 this._event($(window),'navScrollTop',this._onNavScrollTop.bind(this));
             },

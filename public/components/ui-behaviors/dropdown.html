@@ -70,7 +70,7 @@
             _toggle: function () {
                 var dropdown = this._data.get('dropdown');
                 if (dropdown.hasClass('show')) this._hide(true);else{
-                    if(this._device.touch){
+                    if(this._device.touch && !this.disableBlur){
                         /* for touch devices, explicitly set element focus to fire the focus event */
                         this.element[0].focus();
                         var self=this;
@@ -126,7 +126,6 @@
                 var self=this;
                 if(this._device.touch){
                     this._hide(false);
-                    this._unbindBlur();
                 }else{
                     setTimeout(function(){
                         self._hide(false);//mozilla/firefox won't fire click event on links unless hide() is delayed
@@ -163,7 +162,11 @@
                         this._data.set('focused', true);
                     }
                 }
-                this._event(element, click, function (event) {
+                this._event(element.children('a'), click, function (event) {
+                    self._onClick(event);
+                });
+
+                this._event(element.children('[dropdown]'), click, function (event) {
                     self._onClick(event);
                 });
 
@@ -199,17 +202,15 @@
             },
 
             _blurEvent: function(){
-                var click=this._data.click;
+                var $document=$(document);
+                var self=this;
+                var click=this._data.click + '.blur';
                 var element=this.element;
-                this._event($(document),click,true,function(event){
-                    if(!$(event.target).closest(element).length && !this._data.get('focused')){
-                        element[0].blur();
-                    }
+                $document.on(click,function(event){
+                        //element[0].blur();
+                        self._hide(true);
+                        $document.off(click);
                 });
-            },
-
-            _unbindBlur: function(){
-                this._unbindEvents();
             },
 
 
@@ -237,7 +238,7 @@
             },
 
             blur:function(){
-                this._resetFocus();
+                this._resetFocused();
             }
 
         };

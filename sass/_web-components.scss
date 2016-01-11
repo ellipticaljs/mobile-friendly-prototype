@@ -17,7 +17,7 @@ $_social-icon-color:map-get($Color,footer-icon);
 @include ui-topbar($component:ci-bar,$map:(height:$_height)){
   @include ui-menu();
   @include ui-dropdown();
-  h3,h5{
+  h3,h4,h5{
     color:map-get($Color,brand);
   }
   a{

@@ -2,11 +2,11 @@
 <link rel="import" href="../../components/ui-navigation/polymer-drawer-panel.html">
 <dom-module id="app-header">
     <template>
-        <ui-drawer-panel>
+        <ui-drawer-panel home-url="/">
             <ui-topbar>
                 <ui-toggle></ui-toggle>
                 <section class="space-between">
-                    <h3 home brand>My Brand</h3>
+                    <h3 home>My Brand</h3>
                     <ui-menu>
                         <menu-item><a href="/about.html">About</a></menu-item>
                         <menu-item><a href="/help.html">Help</a></menu-item>
@@ -17,7 +17,7 @@
                     </ui-menu>
                 </section>
                 <ui-brand class="show-for-medium-down">
-                    <h5 home>My Brand</h5>
+                    <h4 home>My Brand</h4>
                 </ui-brand>
             </ui-topbar>
             <ui-sidebar drawer>
@@ -28,7 +28,7 @@
                 <ui-menu class="column">
                     <menu-item>
                         <span class="icon-info-outline"></span>
-                        <a>About</a>
+                        <a href="/about.html">About</a>
                     </menu-item>
                     <menu-item>
                         <span class="icon-help"></span>
@@ -44,7 +44,7 @@
                     </menu-item>
                     <ui-button-dropdown disable-blur="true">
                         <span class="icon-android"></span>
-                        <a>Menu Item</a>
+                        <a>Devices</a>
                         <ui-dropdown>
                             <menu-item><a>Sublink One</a></menu-item>
                             <menu-item><a>Sublink Two</a></menu-item>
@@ -54,8 +54,8 @@
                         </ui-dropdown>
                     </ui-button-dropdown>
                     <ui-button-dropdown disable-blur="true">
-                        <span class="icon-launch"></span>
-                        <a>Menu Item Two</a>
+                        <span class="icon-apps"></span>
+                        <a>Apps</a>
                         <ui-dropdown>
                             <menu-item><a>Sublink One</a></menu-item>
                             <menu-item><a>Sublink Two</a></menu-item>
@@ -64,10 +64,17 @@
                             <menu-item><a>Sublink Five</a></menu-item>
                         </ui-dropdown>
                     </ui-button-dropdown>
-                    <menu-item>
-                        <span class="icon-gavel"></span>
-                        <a>Menu Item Three</a>
-                    </menu-item>
+                    <ui-button-dropdown disable-blur="true">
+                        <span class="icon-cloud"></span>
+                        <a>Services</a>
+                        <ui-dropdown>
+                            <menu-item><a>Sublink One</a></menu-item>
+                            <menu-item><a>Sublink Two</a></menu-item>
+                            <menu-item><a>Sublink Three</a></menu-item>
+                            <menu-item><a>Sublink Four</a></menu-item>
+                        </ui-dropdown>
+                    </ui-button-dropdown>
+
                 </ui-menu>
                 <ui-social class="bottom flex-center padding-top two">
                     <social-icon>
