@@ -8107,7 +8107,11 @@ footer[data-role=footer] {
   section.index {
     padding-top: 50px; }
   ui-carousel {
-    min-height: 0; } }
+    min-height: 0; }
+  footer[data-role=footer] .links > div:nth-of-type(odd) {
+    width: 50%; }
+  footer[data-role=footer] .links > div:nth-of-type(even) {
+    width: 50%; } }
 
 @media only screen and (max-width: 640px) {
   .promo-box {
