@@ -1,10 +1,17 @@
 {
-  "path":"./public",
-  "port":"9030",
-  "src":"./app/**/*.js",
-  "dest":"./public/scripts",
-  "destFile":"app.js",
+  "sassApp":"./app.scss",
+  "sassSrc":"./sass/**/*.scss",
+  "cssDest":"./public/css",
+  "devPath":"./public",
+  "devPort":"9030",
+  "ellipticalScriptPath":"./app",
+  "scriptSrc":"./app/**/*.js",
+  "scriptDest":"./public/scripts",
   "livePort":"9040",
-  "liveHost":"127.0.0.1"
-
+  "livePath":"./public",
+  "liveHost":"127.0.0.1",
+  "importSrc":"./public/imports",
+  "vulcanDest":"./public/vulcanized",
+  "stripExcludes":"false",
+  "inlineScripts":"true"
 }
