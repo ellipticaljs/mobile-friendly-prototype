@@ -156,3 +156,9 @@ inlineScripts
 
 ```
 
+
+## Additional Notes on Html Imports and Vulcanization
+
+The prototype implements the web component standard for UI elements. This includes the Html Imports spec. Because Chromium is the only borwser that currently
+implements the W3C spec, it is important to vulcanize the front-end assets for the web app to run efficiently(or even correctly) given the number of bower dependencies.
+The strategy is simple: instead of
