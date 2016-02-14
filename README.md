@@ -162,7 +162,7 @@ inlineScripts
 The prototype implements the web component standard for UI elements. This includes the Html Imports spec. Because Chromium is the only browser that currently
 implements this W3C spec, it is important to vulcanize the front-end assets and dependencies for the web app to run efficiently(or even correctly) given the number of bower dependencies.
 The strategy is simple: instead of inlining the import statements (the link element with rel="import" attribute) separately in the html document, we aggregate them together
-into a single file(in this instance, ./imports/import.html). This file includes all the bower components, your own custom lements, and any framework/library dependencies). At the very
+into a single file(in this instance, ./imports/import.html). This file includes all the bower components, your own custom elements and any framework/library dependencies. At the very
 bottom, we put a final reference to an app.html file. This file will contain the script references to the application javascript code files. The structure of this app.html should be in the form:
 
 ```html
