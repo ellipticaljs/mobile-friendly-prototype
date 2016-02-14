@@ -10,32 +10,16 @@ gulp.task('start',function(){
     tasks.start();
 });
 
-gulp.task('start-live-server',function(){
-    tasks.startLiveServer();
-});
-
-gulp.task('start-server',function(){
-    tasks.startServer();
-});
-
-gulp.task('start-no-sass',function(){
-    tasks.startNoSass();
-});
-
-gulp.task('start-live-app',function(){
-    tasks.startLiveApp();
-});
-
-gulp.task('start-live-app-no-sass',function(){
-    tasks.startLiveAppNoSass();
+gulp.task('start-live',function(){
+    tasks.startLive();
 });
 
 gulp.task('start-app',function(){
     tasks.startApp();
 });
 
-gulp.task('start-app-no-sass',function(){
-    tasks.startApp();
+gulp.task('start-live-app',function(){
+    tasks.startLiveApp();
 });
 
 gulp.task('start-live-sass',function(){
