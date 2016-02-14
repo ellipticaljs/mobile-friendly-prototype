@@ -1,5 +1,0 @@
-[
-  "./lib/url.js",
-  "./lib/location.js",
-  "./lib/router.js"
-]

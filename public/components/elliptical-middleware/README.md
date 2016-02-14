@@ -1,6 +1,0 @@
-# Elliptical Middleware
-
-Elliptical Middleware
-
-
-

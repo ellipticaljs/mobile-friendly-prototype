@@ -1,3 +1,0 @@
-Elliptical Sass Library
-===========================
-
