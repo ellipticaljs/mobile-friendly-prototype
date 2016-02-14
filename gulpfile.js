@@ -2,6 +2,14 @@ gulp.task('default',function(){
     tasks.default();
 });
 
+gulp.task('start-live-server',function(){
+    tasks.startLiveServer();
+});
+
+gulp.task('start-server',function(){
+    tasks.startServer();
+});
+
 gulp.task('start-live',function(){
     tasks.startLive();
 });
