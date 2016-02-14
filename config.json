@@ -4,7 +4,7 @@
   "cssDest":"./public/css",
   "devPath":"./public",
   "devPort":"9030",
-  "ellipticalScriptPath":"./app",
+  "appScriptPath":"./app",
   "scriptSrc":"./app/**/*.js",
   "scriptDest":"./public/scripts",
   "livePort":"9040",

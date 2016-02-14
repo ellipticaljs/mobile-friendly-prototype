@@ -1,3 +1,11 @@
+var config=require('./config.json');
+var Tasks=require('elliptical-gulp');
+var gulp=require('gulp');
+
+
+var tasks=new Tasks(config);
+
+
 gulp.task('default',function(){
     tasks.default();
 });
@@ -34,6 +42,22 @@ gulp.task('start-sass',function(){
     tasks.startSass();
 });
 
+gulp.task('start-live-app-no-sass',function(){
+    tasks.startLiveAppNoSass();
+});
+
+gulp.task('start-app-no-sass',function(){
+    tasks.startAppNoSass();
+});
+
+gulp.task('start-live-scripts',function(){
+    tasks.startLiveScripts();
+});
+
+gulp.task('start-scripts',function(){
+    tasks.startScripts();
+});
+
 gulp.task('sass-compile', function () {
     tasks.sassCompile();
 });
@@ -44,6 +68,10 @@ gulp.task('sass-watch', function () {
 
 gulp.task('scripts-watch', function () {
     tasks.scriptsWatch();
+});
+
+gulp.task('scripts-build', function () {
+    tasks.scriptsBuild();
 });
 
 gulp.task('app-watch', function () {
@@ -58,10 +86,10 @@ gulp.task('vulcanize', function () {
     tasks.vulcanize();
 });
 
-gulp.task('app-write-imports', function () {
-    tasks.AppWriteImports();
+gulp.task('app-build-imports', function () {
+    tasks.appBuildImports();
 });
 
 gulp.task('app-watch-imports', function () {
-    tasks.AppWatchImports();
+    tasks.appWatchImports();
 });
