@@ -93,3 +93,7 @@ gulp.task('app-build-imports', function () {
 gulp.task('app-watch-imports', function () {
     tasks.appWatchImports();
 });
+
+gulp.task('watch', function () {
+    tasks.watch();
+});
