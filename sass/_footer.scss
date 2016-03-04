@@ -1,0 +1,57 @@
+@include ui-sticky-footer();
+
+footer[data-role=footer]{
+  font-family:map-get($Font,medium);
+  min-height:360px;
+  margin-top:8em;
+  padding-top:3em;
+  font-size:14px;
+  background:map-get($Color,footer-bg);
+  color:map-get($Color,footer-link);
+
+  .footer-box{
+    min-height:300px;
+    &.icons{
+      @include align-items(flex-end);
+    }
+  }
+
+  a{
+    color:map-get($Color,footer-link);
+    &:hover{
+      color:map-get($Color,footer-link-hover);
+    }
+  }
+
+  .links{
+    &>div{
+      &:nth-of-type(odd){
+        width:30%;
+      }
+      &:nth-of-type(even){
+        width:70%;
+      }
+      margin-bottom:.5em;
+    }
+  }
+
+  .legal{
+    font-size:12px;
+    a{
+      font-size:12px;
+      font-family:map-get($Font,regular);
+      margin-right:1em;
+    }
+  }
+  &.darken{
+    background:map-nested-get($Color,darken,footer-bg);
+    color:map-nested-get($Color,darken,footer-link);
+    a{
+      color:map-nested-get($Color,darken,footer-link);
+      &:hover{
+        color:map-nested-get($Color,darken,footer-link-hover);
+      }
+    }
+  }
+}
+

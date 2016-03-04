@@ -1,6 +1,6 @@
 {
   "name": "mobile-friendly-prototype",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "mobile-friendly web components starter project",
   "main": "./public/index.html",
   "scripts": {
