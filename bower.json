@@ -1,7 +1,7 @@
 {
   "name": "mobile-friendly-prototype",
   "description": "mobile-friendly starter prototype",
-  "version":"1.0.12",
+  "version":"1.1.0",
   "main": "public/index.html",
   "authors": [
     "Scott <dev@misonline.biz>"
