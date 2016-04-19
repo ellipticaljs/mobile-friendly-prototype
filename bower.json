@@ -21,9 +21,9 @@
   ],
   "dependencies": {
     "elliptical-holderjs": "~2.9.2",
-    "ui-components": "~1.0.0",
+    "ui-components": "~1.1.1",
     "paper-elements": "PolymerElements/paper-elements#~1.0.7",
-    "elliptical-browser": "~1.0.20",
+    "elliptical-browser": "~1.0.24",
     "elliptical-viewdata": "~1.0.1"
   }
 }

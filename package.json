@@ -13,12 +13,13 @@
     "url": "https://github.com/ellipticaljs/mobile-friendly-prototype.git"
   },
   "dependencies": {
+    "elliptical-gulp": "git+https://github.com/ellipticaljs/gulp.git",
     "elliptical-sass": "git+https://github.com/ellipticaljs/sass.git",
     "sass-md-components": "git+https://github.com/ellipticaljs/sass-md-components.git",
     "sass-ubuntu": "git+https://github.com/ellipticaljs/sass-ubuntu.git"
   },
   "devDependencies": {
-    "elliptical-gulp": "git+https://github.com/ellipticaljs/gulp.git",
+
     "gulp": "^3.8.7",
     "gulp-util": "^2.2.14",
     "gulp-concat": "^2.2.0",
