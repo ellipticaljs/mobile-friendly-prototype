@@ -1,7 +1,7 @@
-MOBILE FRIENDLY SKELETON
+MOBILE FRIENDLY PROTOTYPE
 ===========================
 
-Simple responsive starter kit.
+A responsive, web-components starter-kit.
 
 
 ##Install
