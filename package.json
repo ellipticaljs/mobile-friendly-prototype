@@ -1,6 +1,6 @@
 {
   "name": "mobile-friendly-prototype",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "mobile-friendly web components starter project",
   "main": "./public/index.html",
   "scripts": {
@@ -33,6 +33,10 @@
     "gulp": "^3.8.7",
     "minimist": "^1.2.0",
     "eslint": "^3.0.1",
-    "babel-eslint": "^6.1.2"
+    "babel-eslint": "^6.1.2",
+    "core-js": "^2.4.1",
+    "clone": "^1.0.2",
+    "parse5": "^2.2.1",
+    "lodash": "^4.15.0"
   }
 }

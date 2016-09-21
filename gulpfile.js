@@ -245,3 +245,25 @@ gulp.task('web-component', function () {
 });
 
 
+///page ----------------------------------------------------------------------------------------------------------------
+
+gulp.task('page-scaffold', function () {
+    scaffoldTasks.pageScaffold(config);
+});
+
+gulp.task('page-add', function () {
+    scaffoldTasks.pagePartialScaffold(config);
+});
+
+gulp.task('page-template', function () {
+    var argv = require('minimist')(process.argv.slice(2));
+    var name=argv.name;
+    if(name===undefined){
+        console.log("Error: template name required");
+        return;
+    }
+    var params={
+        name:name
+    };
+    scaffoldTasks.pageCreateView(config,params);
+});

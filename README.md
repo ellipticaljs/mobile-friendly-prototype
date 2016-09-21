@@ -86,6 +86,18 @@ gulp app-provider --class <className>
 # binding
 gulp app-binding --name <name>
 
+# scaffold page app
+
+gulp page-scaffold
+
+# add page app to existing app
+
+gulp page-add
+
+# page template
+
+gulp page-template --name <name>
+
 
 ```
 
